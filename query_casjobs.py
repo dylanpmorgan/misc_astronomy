@@ -64,7 +64,6 @@ def sdss_allspec(filename, casID=None, casPass=None):
         print 'Finished: '+str(file_name)
         counter += 1
 
-    pdb.set_trace()
     t.write('/Users/dpmorg/gdrive/research/cwdm_flares/new/data/'+'s82_cwdm_allspec.fits', overwrite=True)
 
 def sdss_allspec_query(raOut, decOut, queryname="casjobs", arcSearch=2.0):
@@ -167,8 +166,6 @@ def s82_lc(filename, casID=None, casPass=None):
 
         query = s82_lc_query(ra, dec, table_name)
 
-        pdb.set_trace()
-
         job_id = jobs.submit(query, context='Stripe82')
 
         while monitor_status != 5:
@@ -183,7 +180,6 @@ def s82_lc(filename, casID=None, casPass=None):
         print 'Downloaded '+str(file_name)
         counter += 1
 
-    pdb.set_trace()
     data['S82_FILE'] = s82_file_lis
     data.write(output_path+file_name, overwrite=True)
 
@@ -279,5 +275,4 @@ def sdss_extinct(filename, casID=None, casPass=None):
         data.write('/Users/dpmorg/gdrive/research/cwdm_flares/new/data/'+'s82_cwdm_phot_ext.fits', overwrite=True)
         counter += 1
 
-    pdb.set_trace()
     data.write('/Users/dpmorg/gdrive/research/cwdm_flares/new/data/'+'s82_cwdm_phot_ext.fits', overwrite=True)
